@@ -77,6 +77,27 @@ public abstract class ServiceInfo implements Cloneable {
 
     /**
      * Construct a service description for registering with JmDNS.
+     *
+     * @param type
+     *            fully qualified service type name, such as <code>_http._tcp.local.</code>.
+     * @param name
+     *            unqualified service instance name, such as <code>foobar</code>
+     * @param port
+     *            the local port on which the service runs
+     * @param text
+     *            string describing the service
+     * @param address
+     *            address to announce via service discovery
+     * @return new service info
+     */
+    public static ServiceInfo create(final String type, final String name, final int port, final String text, final Inet4Address address) {
+        ServiceInfoImpl serviceInfo = new ServiceInfoImpl(type, name, "", port, 0, 0, false, text);
+        serviceInfo.addAddress(address);
+        return serviceInfo;
+    }
+
+    /**
+     * Construct a service description for registering with JmDNS.
      * 
      * @param type
      *            fully qualified service type name, such as <code>_http._tcp.local.</code>.

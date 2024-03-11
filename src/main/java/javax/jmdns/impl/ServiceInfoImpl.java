@@ -426,7 +426,7 @@ public class ServiceInfoImpl extends ServiceInfo implements DNSListener, DNSStat
      * @param addr
      *            the addr to add
      */
-    void addAddress(Inet4Address addr) {
+    public void addAddress(Inet4Address addr) {
         _ipv4Addresses.add(addr);
     }
 
