@@ -16,6 +16,8 @@ kai@openhab.org
 
 # JmDNS
 
+This version has a settable address for weird reasons...
+
 This is an implementation of multi-cast DNS in Java. It
 supports service discovery and service registration. It is fully
 interoperable with Apple's Bonjour. 
